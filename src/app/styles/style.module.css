@@ -1,0 +1,100 @@
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    font-family: var(--font-display);
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .fileInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .sliderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .slider {
+    width: 100%;
+  }
+  
+  .switchContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .switchLabel {
+    cursor: pointer;
+    font-family: var(--font-display);
+  }
+  
+  .switch {
+    margin-right: 10px;
+  }
+  
+  .button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-display);
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+  
+  .resultSection {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: var(--font-display);
+  }
+  
+  .resultPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+  
+  .previewImage,
+  .previewVideo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  
