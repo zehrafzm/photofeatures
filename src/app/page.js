@@ -16,8 +16,31 @@ export default function Home() {
 
 
   const handleFileUpload = (e) => {
-    setUploadedFile(e.target.files[0]);
-  };
+  const file = e.target.files[0];
+
+  if (file && file.type.startsWith("video/")) {
+    const video = document.createElement("video");
+    video.preload = "metadata";
+
+    video.onloadedmetadata = () => {
+      window.URL.revokeObjectURL(video.src); // cleanup
+
+      const duration = video.duration;
+      if (duration > 30) {
+        alert("Video must be 30 seconds or less.");
+        setUploadedFile(null); // reset
+        return;
+      }
+
+      setUploadedFile(file); // valid, set it
+    };
+
+    video.src = URL.createObjectURL(file);
+  } else {
+    setUploadedFile(file); // handle images as usual
+  }
+};
+
 
   const handleConvert = async () => {
     if (!uploadedFile) return alert("Please upload a file first!");
