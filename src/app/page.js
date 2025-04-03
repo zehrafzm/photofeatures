@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.tabela}>framefeatures</h1>
+      <h1 className={styles.tabela}>framefeatures.com</h1>
       <h1 className={styles.title}>upload the image or video for converting them into edge detected black & white version</h1>
 
       <div className={styles.controls}>
