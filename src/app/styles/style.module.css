@@ -11,9 +11,19 @@
     font-family: var(--font-display);
   }
   
-  .title {
+  .tabela {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: black;
+    padding: 1px 20px;
+    width: 100%; 
+    display: block;
+  }
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
     text-align: center;
   }
   
