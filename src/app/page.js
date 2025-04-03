@@ -6,11 +6,15 @@ import styles from './styles/style.module.css';
 
 
 export default function Home() {
-  const [threshold, setThreshold] = useState({ lower: 0, upper: 100 });
+  const [threshold, setThreshold] = useState({ lower: 40, upper: 140 });
   const [isBlackBackground, setIsBlackBackground] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [result, setResult] = useState(null);
   const [isConverting, setIsConverting] = useState(false);
+  const [highQ, setHighQ] = useState(false);
+
+
+
   const handleFileUpload = (e) => {
     setUploadedFile(e.target.files[0]);
   };
@@ -26,6 +30,8 @@ export default function Home() {
     formData.append("lower_threshold", threshold.lower);
     formData.append("upper_threshold", threshold.upper);
     formData.append("is_black_background", isBlackBackground);
+    formData.append("high_quality", highQ);
+
   
     try {
       const response = await fetch("https://photo-features.onrender.com/process/", {
@@ -67,6 +73,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.tabela}>framefeatures</h1>
       <h1 className={styles.title}>upload the image or video for converting them into edge detected black & white version</h1>
 
       <div className={styles.controls}>
@@ -125,6 +132,23 @@ export default function Home() {
         >
           {!isBlackBackground ? "Black Background & White Features" : "White Background & Black Features"}
         </button>
+        </div>
+        <div>
+        {"coversion type : "}
+        <button
+          onClick={() => setHighQ(!highQ)}
+          style={{
+            backgroundColor: "black",
+            color: "whitesmoke",
+            padding: "10px 20px",
+            cursor: "pointer",
+            fontSize: "15px",
+          }}
+        >
+          {highQ ? "high quality" : "normal"}
+        </button>
+        {highQ ? " high quality conversion takes longer time (up to few minutes)" : "normal conversion "}
+
         </div>
 
         <button onClick={handleConvert} className={styles.button}>
